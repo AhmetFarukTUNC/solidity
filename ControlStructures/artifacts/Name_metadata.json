@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ControlStructures/IfElse.sol": "Name"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ControlStructures/IfElse.sol": {
+			"keccak256": "0xf7b77a4d107fcabd3a6a602bbedd09a9ab48cb1bec84d4df12c8d3b3bc50686c",
+			"urls": [
+				"bzz-raw://05281ee84c2784043df6591fdbc4502c5f04140fef774ab884b035c3c78fc0c7",
+				"dweb:/ipfs/QmWLfBEGaSxoBAA15xr1Dg8SB3zjD8ABdbqHKYBr6aTEzG"
+			]
+		}
+	},
+	"version": 1
+}
