@@ -1,0 +1,112 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\Monster\\Desktop\\tubitak\\login\\contracts\\changeuserinformation.sol": {
+      "lastModificationDate": 1718309943093,
+      "contentHash": "77664c757c0851057061668909b0ca01",
+      "sourceName": "contracts/changeuserinformation.sol",
+      "solcConfig": {
+        "version": "0.8.2",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UserPanelInfo",
+        "UserPanelInterface"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\tubitak\\login\\contracts\\signup.sol": {
+      "lastModificationDate": 1718313216361,
+      "contentHash": "8ab5fd4f6db96afd24a922059bd87273",
+      "sourceName": "contracts/signup.sol",
+      "solcConfig": {
+        "version": "0.8.2",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IUserPanel",
+        "NewContract"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\tubitak\\login\\contracts\\UserPanel.sol": {
+      "lastModificationDate": 1718377476073,
+      "contentHash": "e091c3cf0a9d64afdbec904cd9e7acba",
+      "sourceName": "contracts/UserPanel.sol",
+      "solcConfig": {
+        "version": "0.8.2",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UserPanel"
+      ]
+    }
+  }
+}
