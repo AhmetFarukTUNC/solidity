@@ -1,44 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\contracts\\HititToken.sol": {
-      "lastModificationDate": 1718636415647,
-      "contentHash": "4b30cb9a8b32a93104ab21499184fd69",
-      "sourceName": "contracts/HititToken.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "HititCoin"
-      ]
-    },
     "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
       "lastModificationDate": 1718636716192,
       "contentHash": "c6375ef25e84c90b3d15f9ec4eef218f",
@@ -80,10 +42,10 @@
         "ERC20"
       ]
     },
-    "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
-      "lastModificationDate": 1718636716221,
-      "contentHash": "5517c8678c18eb1a8ba58810e7ca39ca",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+    "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1718636716173,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
@@ -113,7 +75,7 @@
         "^0.8.20"
       ],
       "artifacts": [
-        "IERC20"
+        "Context"
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\interfaces\\draft-IERC6093.sol": {
@@ -154,10 +116,10 @@
         "IERC721Errors"
       ]
     },
-    "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
-      "lastModificationDate": 1718636716173,
-      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
-      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+    "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1718636716221,
+      "contentHash": "5517c8678c18eb1a8ba58810e7ca39ca",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
@@ -187,7 +149,7 @@
         "^0.8.20"
       ],
       "artifacts": [
-        "Context"
+        "IERC20"
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
@@ -229,8 +191,8 @@
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\contracts\\ETicaret.sol": {
-      "lastModificationDate": 1718637769545,
-      "contentHash": "cc59ece0dd2ebaed9054d5bf74a4be1c",
+      "lastModificationDate": 1718732911721,
+      "contentHash": "82fa55394356e1d0df6769f60e4e66b3",
       "sourceName": "contracts/ETicaret.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -257,18 +219,245 @@
         }
       },
       "imports": [
-        "./HititToken.sol"
+        "./HititCoin.sol"
       ],
       "versionPragmas": [
-        "^0.8.0"
+        "0.8.20"
       ],
       "artifacts": [
         "ECommercePayment"
       ]
     },
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\contracts\\HititCoin.sol": {
+      "lastModificationDate": 1718732918448,
+      "contentHash": "00e12cf00d32898c9c75b88af354337a",
+      "sourceName": "contracts/HititCoin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.20"
+      ],
+      "artifacts": [
+        "HititCoin"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1718728949155,
+      "contentHash": "49ac384dd0821e0939cfe99c514c6d6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1718728733606,
+      "contentHash": "b4fa2b23b7da94ba573a8adf1332ac25",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\node_modules\\@openzeppelin\\contracts\\interfaces\\draft-IERC6093.sol": {
+      "lastModificationDate": 1718728951994,
+      "contentHash": "943328f5ff9710333f66f1d983b02dfb",
+      "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "IERC1155Errors",
+        "IERC20Errors",
+        "IERC721Errors"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1718728953471,
+      "contentHash": "1c033ac5b13bfdd1f46f35bbcc0b90e8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1718728943657,
+      "contentHash": "502591ec4d36b93b586cba50adaa9253",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\contracts\\UluslararsıHavale.sol": {
-      "lastModificationDate": 1718637152837,
-      "contentHash": "36cf01830755b4712e9323c040ed328e",
+      "lastModificationDate": 1718732947717,
+      "contentHash": "fe795ae61afa735f83aeda2922e5fb19",
       "sourceName": "contracts\\UluslararsıHavale.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -295,18 +484,18 @@
         }
       },
       "imports": [
-        "./HititToken.sol"
+        "./HititCoin.sol"
       ],
       "versionPragmas": [
-        "^0.8.0"
+        "0.8.20"
       ],
       "artifacts": [
         "InternationalTransfer"
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\hititcoin\\contracts\\SadakatSozlesmesi.sol": {
-      "lastModificationDate": 1718637286209,
-      "contentHash": "2e1bf921cd6deb5791b6e808b0f41e2b",
+      "lastModificationDate": 1718732924881,
+      "contentHash": "b1891f254d3f17263fd2f3a8798f75e6",
       "sourceName": "contracts/SadakatSozlesmesi.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -333,10 +522,10 @@
         }
       },
       "imports": [
-        "./HititToken.sol"
+        "./HititCoin.sol"
       ],
       "versionPragmas": [
-        "^0.8.0"
+        "0.8.20"
       ],
       "artifacts": [
         "LoyaltyProgram"

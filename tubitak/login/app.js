@@ -106,7 +106,7 @@ if (typeof window.ethereum !== 'undefined') {
 
     // Sözleşme nesnesini oluştur
     const contract = new web3.eth.Contract(abi, contractAddress);
-    console.log(contract.methods.getUser("0x599Ea0Ef5A86a1ef7300b6EdbF0f575E4B39ff1a").call())
+    console.log(contract.methods.getAllUsers().call())
 
     // Kullanıcı kaydı formunu dinle
     document.getElementById("registerForm").addEventListener("submit", async function(event) {
