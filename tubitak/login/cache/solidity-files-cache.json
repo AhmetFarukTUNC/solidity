@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\changeuserinformation.sol": {
-      "lastModificationDate": 1718309943093,
-      "contentHash": "77664c757c0851057061668909b0ca01",
+      "lastModificationDate": 1718897814341,
+      "contentHash": "3783241b67d8bdba88ff931194fbbb80",
       "sourceName": "contracts/changeuserinformation.sol",
       "solcConfig": {
-        "version": "0.8.2",
+        "version": "0.8.19",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -30,7 +30,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.0"
+        "0.8.19"
       ],
       "artifacts": [
         "UserPanelInfo",
@@ -38,11 +38,11 @@
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\signup.sol": {
-      "lastModificationDate": 1718745286731,
-      "contentHash": "0adbd45f26df9c69c32c3e8fa8d725ea",
+      "lastModificationDate": 1718898861228,
+      "contentHash": "6d95d77c9cf51f62a9b9c75e0a22bd17",
       "sourceName": "contracts/signup.sol",
       "solcConfig": {
-        "version": "0.8.2",
+        "version": "0.8.19",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -66,19 +66,19 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.0"
+        "0.8.19"
       ],
       "artifacts": [
-        "IUserPanel",
+        "IUserRegistry",
         "NewContract"
       ]
     },
-    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\UserPanel.sol": {
-      "lastModificationDate": 1718731482745,
-      "contentHash": "e091c3cf0a9d64afdbec904cd9e7acba",
-      "sourceName": "contracts/UserPanel.sol",
+    "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\UserRegistry.sol": {
+      "lastModificationDate": 1718898761095,
+      "contentHash": "fc7b0f5859a121a3e499b9d9c264fb95",
+      "sourceName": "contracts/UserRegistry.sol",
       "solcConfig": {
-        "version": "0.8.2",
+        "version": "0.8.19",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -102,10 +102,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.0"
+        "0.8.19"
       ],
       "artifacts": [
-        "UserPanel"
+        "UserRegistry"
       ]
     }
   }

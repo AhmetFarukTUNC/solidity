@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getAllUsers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Desktop/solidity/tubitak/login/contracts/signup.sol": "IUserPanel"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Desktop/solidity/tubitak/login/contracts/signup.sol": {
+			"keccak256": "0x9e0a0003360d66c1db939658597642f31ddd54f6731445b8e6a54bbb9df2fe9d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://77f58413ed339a122de832f8bdda812af556299f58719395db9288f291779656",
+				"dweb:/ipfs/QmbfxsCHuhELwAAfmi4E7Y5WrmdiYoymrc8wm5RixBKzmH"
+			]
+		}
+	},
+	"version": 1
+}

@@ -12,13 +12,188 @@
     <form id="registerForm">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Register</button>
+        <label for="walletAddress">Wallet Address:</label>
+        <input type="text" id="walletAddress" name="walletAddress" required><br><br>
+        <label for="isAdmin">Is Admin:</label>
+        <input type="checkbox" id="isAdmin" name="isAdmin"><br><br>
+        <button type="button" onclick="registerUser()">Register</button>
     </form>
 
     <!-- Web3 ve JavaScript Kodları -->
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
-    <script src="app.js"></script>
+    <script>
+        // MetaMask ve Web3.js ile bağlantı kurma
+        if (window.ethereum) {
+            window.web3 = new Web3(window.ethereum);
+            try {
+                // Hesap erişimi talep et
+                ethereum.request({ method: 'eth_requestAccounts' });
+            } catch (error) {
+                console.error("Kullanıcı hesap erişimini reddetti");
+            }
+        } else if (window.web3) {
+            window.web3 = new Web3(web3.currentProvider);
+        } else {
+            console.log('Ethereum tarayıcısı tespit edilmedi. Lütfen MetaMask kurun!');
+        }
+
+        // Akıllı kontrat adresi ve ABI
+        const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+        const abi = [
+            {
+                "inputs": [],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "userAddress",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bool",
+                        "name": "isAdmin",
+                        "type": "bool"
+                    }
+                ],
+                "name": "UserAdded",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_walletAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "_isAdmin",
+                        "type": "bool"
+                    }
+                ],
+                "name": "addUser",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_walletAddress",
+                        "type": "address"
+                    }
+                ],
+                "name": "getUser",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_walletAddress",
+                        "type": "address"
+                    }
+                ],
+                "name": "isAdmin",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getUserCount",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_newAdmin",
+                        "type": "address"
+                    }
+                ],
+                "name": "changeAdmin",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ];
+
+        const contract = new web3.eth.Contract(abi, contractAddress);
+        console.log(contract.methods.getUser("0x599Ea0Ef5A86a1ef7300b6EdbF0f575E4B39ff1a").call())
+        // Kullanıcıyı kaydetme fonksiyonu
+        async function registerUser() {
+            const username = document.getElementById("username").value;
+            const walletAddress = document.getElementById("walletAddress").value;
+            const isAdmin = document.getElementById("isAdmin").checked;
+
+            try {
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+
+                // Akıllı kontrat fonksiyonunu çağırma
+                await contract.methods.addUser(username, walletAddress, isAdmin)
+                    .send({ from: userAddress });
+
+                
+
+                console.log('Kullanıcı başarıyla kaydedildi');
+                alert('Kullanıcı başarıyla kaydedildi!');
+            } catch (error) {
+                console.error('Kullanıcı kaydedilirken hata oluştu:', error);
+                alert('Kullanıcı kaydedilirken hata oluştu!');
+            }
+        }
+    </script>
 </body>
 </html>
