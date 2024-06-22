@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity 0.7.3;
 
 // UserPanel kontratına erişim için arayüz
 interface UserPanelInterface {

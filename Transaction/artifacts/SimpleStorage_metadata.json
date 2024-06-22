@@ -26,6 +26,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToFavouriteNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -87,7 +106,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Transaction/SimpleStorage.sol": "SimpleStorage"
+			"Desktop/solidity/Transaction/SimpleStorage.sol": "SimpleStorage"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -101,12 +120,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Transaction/SimpleStorage.sol": {
-			"keccak256": "0x02cb70717953c9e1c5504c9882777153fb1bdae19e0dce87dc0951d0904bd749",
+		"Desktop/solidity/Transaction/SimpleStorage.sol": {
+			"keccak256": "0x96992f44d75d64cac395dc37e62f7905a3c030273f561063ac3804d4a352b306",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://c358bcf2dd903d8350b75de31e07816a7f09ee747c6b8d0971184aebf7062df1",
-				"dweb:/ipfs/Qmayk9pmcd6mFmGP36HQzUUZoxiZJCYjBWkvWqaHv6cQC4"
+				"bzz-raw://dea62f6c517f9d50e6f0647abc1c39a5846e60ab669ecd58c33e4e2ecfc78a29",
+				"dweb:/ipfs/QmYcax4YR43UpUEGPaVWx1GnnHueQsXAmirQQLfnqaXn9c"
 			]
 		}
 	},

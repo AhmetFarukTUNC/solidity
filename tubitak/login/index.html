@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
     <script>
         // MetaMask ve Web3.js ile bağlantı kurma
+        
         if (window.ethereum) {
             window.web3 = new Web3(window.ethereum);
             try {
@@ -38,7 +39,7 @@
         }
 
         // Akıllı kontrat adresi ve ABI
-        const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+        const contractAddress = '0x60790eb84FEb402afFAD4350a041E6Fc14957CD2';
         const abi = [
             {
                 "inputs": [],
@@ -170,7 +171,7 @@
         ];
 
         const contract = new web3.eth.Contract(abi, contractAddress);
-        console.log(contract.methods.getUser("0x599Ea0Ef5A86a1ef7300b6EdbF0f575E4B39ff1a").call())
+        
         // Kullanıcıyı kaydetme fonksiyonu
         async function registerUser() {
             const username = document.getElementById("username").value;
@@ -180,6 +181,7 @@
             try {
                 const accounts = await web3.eth.getAccounts();
                 const userAddress = accounts[0];
+                console.log(await contract.methods.getUser("0x599Ea0Ef5A86a1ef7300b6EdbF0f575E4B39ff1a").call())
 
                 // Akıllı kontrat fonksiyonunu çağırma
                 await contract.methods.addUser(username, walletAddress, isAdmin)
@@ -187,8 +189,11 @@
 
                 
 
+                
+
                 console.log('Kullanıcı başarıyla kaydedildi');
                 alert('Kullanıcı başarıyla kaydedildi!');
+                
             } catch (error) {
                 console.error('Kullanıcı kaydedilirken hata oluştu:', error);
                 alert('Kullanıcı kaydedilirken hata oluştu!');
