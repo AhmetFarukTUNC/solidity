@@ -14,8 +14,8 @@
         <input type="text" id="username" name="username" required><br><br>
         <label for="walletAddress">Wallet Address:</label>
         <input type="text" id="walletAddress" name="walletAddress" required><br><br>
-        <label for="isAdmin">Is Admin:</label>
-        <input type="checkbox" id="isAdmin" name="isAdmin"><br><br>
+        <label for="isAdmin">Password</label>
+        <input type="text" id="password" name="password"><br><br>
         <button type="button" onclick="registerUser()">Register</button>
     </form>
 
@@ -39,7 +39,7 @@
         }
 
         // Akıllı kontrat adresi ve ABI
-        const contractAddress = '0x60790eb84FEb402afFAD4350a041E6Fc14957CD2';
+        const contractAddress = '0x53987246b070BDb6d5C508558823E99E8211438A';
         const abi = [
             {
                 "inputs": [],
@@ -176,12 +176,12 @@
         async function registerUser() {
             const username = document.getElementById("username").value;
             const walletAddress = document.getElementById("walletAddress").value;
-            const isAdmin = document.getElementById("isAdmin").checked;
+            const isAdmin = document.getElementById("password").value;
 
             try {
                 const accounts = await web3.eth.getAccounts();
                 const userAddress = accounts[0];
-                console.log(await contract.methods.getUser("0x599Ea0Ef5A86a1ef7300b6EdbF0f575E4B39ff1a").call())
+                console.log(await contract.methods.getUser("0x599Ea0Ef5A86a1ef7300b6EdbF0f575E4B39ff1a").call)
 
                 // Akıllı kontrat fonksiyonunu çağırma
                 await contract.methods.addUser(username, walletAddress, isAdmin)

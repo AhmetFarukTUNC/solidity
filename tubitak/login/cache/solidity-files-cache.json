@@ -74,8 +74,8 @@
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\UserRegistry.sol": {
-      "lastModificationDate": 1718898761095,
-      "contentHash": "fc7b0f5859a121a3e499b9d9c264fb95",
+      "lastModificationDate": 1719078111170,
+      "contentHash": "36ff6d9793f79195bc660b997bcfbca6",
       "sourceName": "contracts/UserRegistry.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -102,7 +102,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.19"
+        "^0.8.19"
       ],
       "artifacts": [
         "UserRegistry"
