@@ -1,31 +1,35 @@
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-const { Web3 } = require('web3');
-const { interface, bytecode } = require('./compile');
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const Web3 = require("web3");
+const { abi, bytecode } = require("./compile");
 
-const provider = new HDWalletProvider(
-  'hill sing city sweet comic history confirm decline risk capable oxygen unit',
-  // remember to change this to your own phrase!
-  'https://sepolia.infura.io/v3/c162e17fb4814354bff17441b72e4b3a'
-  // remember to change this to your own endpoint!
-);
+const mnemonic = "hill sing city sweet comic history confirm decline risk capable oxygen unit"; // Metamask mnemonic
+const infuraUrl = "https://sepolia.infura.io/v3/c162e17fb4814354bff17441b72e4b3a"; // Infura URL
+
+const provider = new HDWalletProvider(mnemonic, infuraUrl);
 const web3 = new Web3(provider);
 
-const deploy = async () => {
-  try {
-    const accounts = await web3.eth.getAccounts();
-    console.log('Attempting to deploy from account', accounts[0]);
+const deployContract = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        console.log("Attempting to deploy from account:", accounts[0]);
 
-    const result = await new web3.eth.Contract(JSON.parse(interface))
-      .deploy({ data: bytecode })
-      .send({ gas: '1000000', from: accounts[0] });
+        // Create a new contract instance with the ABI
+        const contract = new web3.eth.Contract(abi);
 
-    console.log(interface);
-    console.log("Contract deployed to", result.options.address);
-  } catch (error) {
-    console.error('An error occurred:', error);
-  } finally {
-    provider.engine.stop();
-  }
+        // Deploy the contract
+        const deployedContract = await contract.deploy({
+            data: bytecode,
+        }).send({
+            from: accounts[0],
+            gas: "1000000",
+        });
+
+        console.log("Contract deployed to:", deployedContract.options.address);
+    } catch (error) {
+        console.error("An error occurred during deployment:", error);
+    } finally {
+        provider.engine.stop();
+    }
 };
 
-deploy();
+deployContract();

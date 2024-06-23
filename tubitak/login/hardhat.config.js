@@ -5,14 +5,14 @@
 
 
     module.exports = {
-        solidity: "0.8.19",
+        solidity: "0.8.24",
         networks: {
           mainnet: {
-            url: `https://sepolia.infura.io/v3/c162e17fb4814354bff17441b72e4b3a`,
+            url: `https://eth-sepolia.g.alchemy.com/v2/gaSqGc4gDONKTkGJcXdHe3BJnwgdov9c`,
               accounts: [`${PRIVATE_KEY}`]
           },
           fuji: {
-            url: `https://sepolia.infura.io/v3/c162e17fb4814354bff17441b72e4b3a`,
+            url: `https://eth-sepolia.g.alchemy.com/v2/gaSqGc4gDONKTkGJcXdHe3BJnwgdov9c`,
               accounts: [`${PRIVATE_KEY}`]
           }
         }

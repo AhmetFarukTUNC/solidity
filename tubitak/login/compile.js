@@ -1,36 +1,67 @@
-const path = require("path");
-const fs = require("fs");
-const solc = require("solc");
+const path = require('path');
+const solc = require('solc');
+const fs = require('fs-extra');
 
-const contractPath = path.resolve(__dirname, "contracts", "UserRegistry.sol");
-const source = fs.readFileSync(contractPath, "utf8");
+// Build directory path
+const buildPath = path.resolve(__dirname, 'build');
 
-// Derleme işlemi için gerekli olan input nesnesini oluşturun
+// Ensure build directory exists, if not create it
+fs.ensureDirSync(buildPath);
+
+// Path to the Solidity contract
+const contractPath = path.resolve(__dirname, 'contracts', 'UserRegistry.sol');
+
+// Read the Solidity contract source code
+const source = fs.readFileSync(contractPath, 'utf8');
+
+// Solidity compiler input structure
 const input = {
-  language: "Solidity",
-  sources: {
-    "UserRegistry.sol": {
-      content: source,
+    language: 'Solidity',
+    sources: {
+        'UserRegistry.sol': {
+            content: source
+        }
     },
-  },
-  settings: {
-    outputSelection: {
-      "*": {
-        "*": ["*"],
-      },
-    },
-  },
+    settings: {
+        outputSelection: {
+            '*': {
+                '*': ['abi', 'evm.bytecode']
+            }
+        }
+    }
 };
 
-// solc.compile ile derleme işlemini gerçekleştirin
+// Compile the contract
 const output = JSON.parse(solc.compile(JSON.stringify(input)));
 
-// Contracts objesini doğrudan export edin
-module.exports = {
-  interface: output.contracts["UserRegistry.sol"].UserRegistry.abi,
-  bytecode: output.contracts["UserRegistry.sol"].UserRegistry.evm.bytecode.object,
-};
+// Check for errors in the output
+if (output.errors) {
+    output.errors.forEach(err => {
+        console.error(err.formattedMessage);
+    });
+    throw new Error("Compilation failed");
+}
 
+// Extract the ABI and bytecode
+const contractName = 'UserRegistry';
+const compiledContract = output.contracts['UserRegistry.sol'][contractName];
 
+if (!compiledContract) {
+    throw new Error(`Contract ${contractName} not found in the compiled output`);
+}
 
+const abi = compiledContract.abi;
+const bytecode = compiledContract.evm.bytecode.object;
 
+// Write the ABI and bytecode to separate files in the build directory
+fs.outputJSONSync(
+    path.resolve(buildPath, `${contractName}.abi.json`),
+    abi
+);
+
+fs.outputJSONSync(
+    path.resolve(buildPath, `${contractName}.bytecode.json`),
+    bytecode
+);
+
+console.log('Contract compiled successfully');

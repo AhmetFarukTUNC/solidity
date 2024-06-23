@@ -1,35 +1,48 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const {Web3} = require('web3');
-const { interface, bytecode } = require('./compile');
+const fs = require('fs');
+const path = require('path');
 
-const mnemonic = 'hill sing city sweet comic history confirm decline risk capable oxygen unit'; // Metamask veya başka bir cüzdanın mnenomic'i
-const infuraUrl = 'https://sepolia.infura.io/v3/c162e17fb4814354bff17441b72e4b3a'; // Infura veya başka bir Ethereum sunucusu URL'si
+// MetaMask mnemonik cümleniz
+const mnemonic = 'hill sing city sweet comic history confirm decline risk capable oxygen unit';
+// Infura URL'nizi buraya ekleyin
+const infuraUrl = 'https://eth-sepolia.g.alchemy.com/v2/gaSqGc4gDONKTkGJcXdHe3BJnwgdov9c'; // Örneğin, ropsten için
 
+// Contract build path
+const buildPath = path.resolve(__dirname, 'build');
+
+// ABI ve bytecode dosyalarını yükleyin
+let abi, bytecode;
+try {
+    abi = JSON.parse(fs.readFileSync(path.resolve(buildPath, 'UserRegistry.abi.json'), 'utf8'));
+    bytecode = JSON.parse(fs.readFileSync(path.resolve(buildPath, 'UserRegistry.bytecode.json'), 'utf8'));
+} catch (error) {
+    console.error('Error reading ABI or bytecode files:', error);
+    process.exit(1); // Exit the process with an error code
+}
+
+// HDWalletProvider ve Web3'ü başlatın
 const provider = new HDWalletProvider(mnemonic, infuraUrl);
 const web3 = new Web3(provider);
 
-const deployContract = async () => {
-  try {
-    const accounts = await web3.eth.getAccounts();
-    console.log('Attempting to deploy from account:', accounts[0]);
+// Kontratı dağıtma fonksiyonu
+const deploy = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        console.log('Deploying from account:', accounts[0]);
 
-    // ABI ve bytecode'u kullanarak yeni bir sözleşme instance'ı oluşturun
-    const contract = new web3.eth.Contract(interface);
+        const result = await new web3.eth.Contract(abi)
+            .deploy({ data: '0x' + bytecode })
+            .send({ from: accounts[0], gas: '1500000', gasPrice: '30000000000' });
 
-    // Sözleşmeyi ağa deploy edin
-    const deployedContract = await contract.deploy({
-      data: bytecode,
-    }).send({
-      from: accounts[0],
-      gas: '1000000',
-    });
-
-    console.log('Contract deployed to:', deployedContract.options.address);
-  } catch (error) {
-    console.error('An error occurred during deployment:', error);
-  } finally {
-    provider.engine.stop();
-  }
+        console.log('Contract deployed to:', result.options.address);
+    } catch (error) {
+        console.error('An error occurred during deployment:', error);
+    } finally {
+        provider.engine.stop(); // Sağlayıcıyı kapatın
+    }
 };
 
-deployContract();
+deploy().catch(error => {
+    console.error('Unhandled promise rejection:', error);
+});

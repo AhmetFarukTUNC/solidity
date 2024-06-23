@@ -121,11 +121,11 @@
 	},
 	"sources": {
 		"Desktop/solidity/Transaction/SimpleStorage.sol": {
-			"keccak256": "0x96992f44d75d64cac395dc37e62f7905a3c030273f561063ac3804d4a352b306",
-			"license": "UNLICENSED",
+			"keccak256": "0xe3ef114dc8889fd6b607410b18f9c44e8c2bfa0f6034fead132f656a0e577e96",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://dea62f6c517f9d50e6f0647abc1c39a5846e60ab669ecd58c33e4e2ecfc78a29",
-				"dweb:/ipfs/QmYcax4YR43UpUEGPaVWx1GnnHueQsXAmirQQLfnqaXn9c"
+				"bzz-raw://6485c1e55d6647c440b8882b1a1e9f417663a818cbf396634f1538e15119a16b",
+				"dweb:/ipfs/QmU3fCadabBcVD96PndrYLJDV7bf5whU7wCV7VLxzUyzT8"
 			]
 		}
 	},

@@ -2,12 +2,13 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\changeuserinformation.sol": {
-      "lastModificationDate": 1718897814341,
-      "contentHash": "3783241b67d8bdba88ff931194fbbb80",
+      "lastModificationDate": 1719132752809,
+      "contentHash": "4e8b49617158ffb46b9037d1a15e278a",
       "sourceName": "contracts/changeuserinformation.sol",
       "solcConfig": {
-        "version": "0.8.19",
+        "version": "0.8.24",
         "settings": {
+          "evmVersion": "paris",
           "optimizer": {
             "enabled": false,
             "runs": 200
@@ -30,7 +31,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.19"
+        "^0.8.24"
       ],
       "artifacts": [
         "UserPanelInfo",
@@ -38,12 +39,13 @@
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\signup.sol": {
-      "lastModificationDate": 1718898861228,
-      "contentHash": "6d95d77c9cf51f62a9b9c75e0a22bd17",
+      "lastModificationDate": 1719132744728,
+      "contentHash": "1decda07d8ebb891222ad73d2cdb8673",
       "sourceName": "contracts/signup.sol",
       "solcConfig": {
-        "version": "0.8.19",
+        "version": "0.8.24",
         "settings": {
+          "evmVersion": "paris",
           "optimizer": {
             "enabled": false,
             "runs": 200
@@ -66,7 +68,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.19"
+        "^0.8.24"
       ],
       "artifacts": [
         "IUserRegistry",
@@ -74,12 +76,13 @@
       ]
     },
     "C:\\Users\\Monster\\Desktop\\solidity\\tubitak\\login\\contracts\\UserRegistry.sol": {
-      "lastModificationDate": 1719078111170,
-      "contentHash": "36ff6d9793f79195bc660b997bcfbca6",
+      "lastModificationDate": 1719143342483,
+      "contentHash": "881455b10a302c0182c042c4d22b3a8f",
       "sourceName": "contracts/UserRegistry.sol",
       "solcConfig": {
-        "version": "0.8.19",
+        "version": "0.8.24",
         "settings": {
+          "evmVersion": "paris",
           "optimizer": {
             "enabled": false,
             "runs": 200
@@ -102,7 +105,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.19"
+        "^0.8.0"
       ],
       "artifacts": [
         "UserRegistry"
