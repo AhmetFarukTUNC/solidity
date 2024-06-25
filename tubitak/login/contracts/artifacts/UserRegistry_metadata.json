@@ -1,94 +1,15 @@
 {
 	"compiler": {
-		"version": "0.8.22+commit.4fc1097e"
+		"version": "0.8.0+commit.c7dfd78e"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "userAddress",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "bool",
-						"name": "isAdmin",
-						"type": "bool"
-					}
-				],
-				"name": "UserAdded",
-				"type": "event"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "_walletAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "bool",
-						"name": "_isAdmin",
-						"type": "bool"
-					}
-				],
-				"name": "addUser",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "admin",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_newAdmin",
-						"type": "address"
-					}
-				],
-				"name": "changeAdmin",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_walletAddress",
+						"name": "_userAddress",
 						"type": "address"
 					}
 				],
@@ -100,27 +21,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "address",
+						"internalType": "string",
 						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getUserCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -129,20 +32,19 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_walletAddress",
-						"type": "address"
-					}
-				],
-				"name": "isAdmin",
-				"outputs": [
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "string",
+						"name": "_password",
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"name": "register",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -159,9 +61,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Desktop/solidity/tubitak/login/contracts/UserPanel.sol": "UserRegistry"
+			"Desktop/solidity/tubitak/login/contracts/SimpleRegister.sol": "UserRegistry"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -173,12 +75,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Desktop/solidity/tubitak/login/contracts/UserPanel.sol": {
-			"keccak256": "0x42a6d9702b1769f39d0814f4616c7aa206f9e8d8657a40cd16f0e517045fb0e3",
+		"Desktop/solidity/tubitak/login/contracts/SimpleRegister.sol": {
+			"keccak256": "0x828fb00bd4b5c05d75a063b9a477f16396285c2547c180cc78d83d89122de408",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f1bb57c8d5b568cbf6ef370898091319faa4d5d8932b1b8a33e5e8695460e313",
-				"dweb:/ipfs/QmaTozx62QaeRQdLC9qVcLqnnWsjJ7pKVMGj5VSENUQxGD"
+				"bzz-raw://1adada1d28e3636aa78a6f8b1cdff92ea1780a5ea7783c0b550b66bb35098ed8",
+				"dweb:/ipfs/Qmdf5SmjzVs5pTtdvKFTXEaAh1SUrGefCcf5JneCry8TL9"
 			]
 		}
 	},

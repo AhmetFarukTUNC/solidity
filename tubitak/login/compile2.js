@@ -18,7 +18,7 @@ const source = fs.readFileSync(contractPath, 'utf8');
 const input = {
     language: 'Solidity',
     sources: {
-        'SimpleRegister.sol': {
+        'UserRegistry.sol': {
             content: source
         }
     },
@@ -43,8 +43,8 @@ if (output.errors) {
 }
 
 // Extract the ABI and bytecode
-const contractName = 'SimpleRegister';
-const compiledContract = output.contracts['SimpleRegister.sol'][contractName];
+const contractName = 'UserRegistry';
+const compiledContract = output.contracts['UserRegistry.sol'][contractName];
 
 if (!compiledContract) {
     throw new Error(`Contract ${contractName} not found in the compiled output`);
