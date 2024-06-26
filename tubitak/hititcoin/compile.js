@@ -9,7 +9,7 @@ const buildPath = path.resolve(__dirname, 'build');
 fs.ensureDirSync(buildPath);
 
 // Path to the Solidity contract
-const contractPath = path.resolve(__dirname, 'contracts', 'UserRegistry.sol');
+const contractPath = path.resolve(__dirname, 'contracts', 'HititCoin.sol');
 
 // Read the Solidity contract source code
 const source = fs.readFileSync(contractPath, 'utf8');
@@ -18,7 +18,7 @@ const source = fs.readFileSync(contractPath, 'utf8');
 const input = {
     language: 'Solidity',
     sources: {
-        'UserRegistry.sol': {
+        'HititCoin.sol': {
             content: source
         }
     },
@@ -43,8 +43,8 @@ if (output.errors) {
 }
 
 // Extract the ABI and bytecode
-const contractName = 'UserRegistry';
-const compiledContract = output.contracts['UserRegistry.sol'][contractName];
+const contractName = 'HititCoin';
+const compiledContract = output.contracts['HititCoin.sol'][contractName];
 
 if (!compiledContract) {
     throw new Error(`Contract ${contractName} not found in the compiled output`);

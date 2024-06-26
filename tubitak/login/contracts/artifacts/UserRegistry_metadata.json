@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.0+commit.c7dfd78e"
+		"version": "0.8.22+commit.4fc1097e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -61,9 +61,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Desktop/solidity/tubitak/login/contracts/SimpleRegister.sol": "UserRegistry"
+			"Desktop/solidity/tubitak/login/contracts/UserRegistry.sol": "UserRegistry"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -75,7 +75,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"Desktop/solidity/tubitak/login/contracts/SimpleRegister.sol": {
+		"Desktop/solidity/tubitak/login/contracts/UserRegistry.sol": {
 			"keccak256": "0x828fb00bd4b5c05d75a063b9a477f16396285c2547c180cc78d83d89122de408",
 			"license": "MIT",
 			"urls": [

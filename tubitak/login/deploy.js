@@ -14,8 +14,8 @@ const buildPath = path.resolve(__dirname, 'build');
 // ABI ve bytecode dosyalarını yükleyin
 let abi, bytecode;
 try {
-    abi = JSON.parse(fs.readFileSync(path.resolve(buildPath, 'SimpleRegister.abi.json'), 'utf8'));
-    bytecode = JSON.parse(fs.readFileSync(path.resolve(buildPath, 'SimpleRegister.bytecode.json'), 'utf8'));
+    abi = JSON.parse(fs.readFileSync(path.resolve(buildPath, 'UserRegistry.abi.json'), 'utf8'));
+    bytecode = JSON.parse(fs.readFileSync(path.resolve(buildPath, 'UserRegistry.bytecode.json'), 'utf8'));
 } catch (error) {
     console.error('Error reading ABI or bytecode files:', error);
     process.exit(1); // Exit the process with an error code
