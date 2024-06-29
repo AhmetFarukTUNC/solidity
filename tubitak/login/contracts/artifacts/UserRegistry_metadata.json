@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.22+commit.4fc1097e"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -21,9 +21,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string",
+						"internalType": "bytes32",
 						"name": "",
-						"type": "string"
+						"type": "bytes32"
 					}
 				],
 				"stateMutability": "view",
@@ -46,6 +46,25 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "userExists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -63,7 +82,7 @@
 		"compilationTarget": {
 			"Desktop/solidity/tubitak/login/contracts/UserRegistry.sol": "UserRegistry"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -76,11 +95,11 @@
 	},
 	"sources": {
 		"Desktop/solidity/tubitak/login/contracts/UserRegistry.sol": {
-			"keccak256": "0x828fb00bd4b5c05d75a063b9a477f16396285c2547c180cc78d83d89122de408",
+			"keccak256": "0x68d53a9db50b92ab00b11981ba789c1862cea7486763b5c97a7170f061348613",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1adada1d28e3636aa78a6f8b1cdff92ea1780a5ea7783c0b550b66bb35098ed8",
-				"dweb:/ipfs/Qmdf5SmjzVs5pTtdvKFTXEaAh1SUrGefCcf5JneCry8TL9"
+				"bzz-raw://741e89f7a1eff80d099a736036b4897fe42b17c33a26e9301be681ad79409569",
+				"dweb:/ipfs/QmarnzSK4aMxhamBnLPDCf9h6w7F58NKmmjWyd4A22jEiA"
 			]
 		}
 	},
