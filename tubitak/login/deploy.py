@@ -8,7 +8,7 @@ load_dotenv()
 
 install_solc("0.6.0")
 
-with open("./contracts/Login.sol", "r") as file:
+with open("./contracts/Login.sol", "r",encoding="utf-8") as file:
     simple_storage_file = file.read()
 
 compiled_sol = compile_standard(
@@ -37,8 +37,8 @@ abi = compiled_sol["contracts"]["Login.sol"]["Login"]["abi"]
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
 
 chain_id = 1337
-my_Adress = "0x080Cf3C077ED1255Fbe3E017228472B6f82f0Ad0"
-private_key = os.getenv("PRIVATE_KEY")
+my_Adress = input("Public Key : ")
+private_key = input("Private Key : ")
 
 # Create the contract in python
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
@@ -72,7 +72,7 @@ simple_storage = w3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 
 
 # Update the value of the favourite number
-store_transaction = simple_storage.functions.register("ahmettt","12345").build_transaction({
+store_transaction = simple_storage.functions.register("mehmet","12345").build_transaction({
     "chainId": chain_id,
     "from": my_Adress,
     "nonce": nonce + 1,
@@ -86,7 +86,29 @@ send_store_tx = w3.eth.send_raw_transaction(signed_store_txn.rawTransaction)
 
 tx_receipt = w3.eth.wait_for_transaction_receipt(send_store_tx)
 
-print(simple_storage.functions.getUser("0x080Cf3C077ED1255Fbe3E017228472B6f82f0Ad0").call())
 
 
 print(simple_storage.functions.login("ahmettt","12345").call())
+
+
+print(simple_storage.functions.getUser(my_Adress).call())
+
+print(simple_storage.functions.getPassword(my_Adress).call())
+
+store_transaction = simple_storage.functions.updatePassword("mustafa").build_transaction({
+    "chainId": chain_id,
+    "from": my_Adress,
+    "nonce": nonce + 2,
+    "gas": 2000000,  # You can adjust this as necessary
+    "gasPrice": w3.to_wei('20', 'gwei')  # Set a gas price
+})
+
+signed_store_txn = w3.eth.account.sign_transaction(store_transaction, private_key=private_key)
+
+send_store_tx = w3.eth.send_raw_transaction(signed_store_txn.rawTransaction)
+
+tx_receipt = w3.eth.wait_for_transaction_receipt(send_store_tx)
+
+print(simple_storage.functions.getUser(my_Adress).call())
+
+print(simple_storage.functions.getPassword(my_Adress).call())

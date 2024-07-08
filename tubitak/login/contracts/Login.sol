@@ -5,6 +5,7 @@ contract Login {
     struct User {
         string username;
         bytes32 passwordHash;
+        string password;
     }
 
     mapping(address => User) private users;
@@ -18,7 +19,8 @@ contract Login {
 
         users[msg.sender] = User({
             username: _username,
-            passwordHash: keccak256(abi.encodePacked(_password))
+            passwordHash: keccak256(abi.encodePacked(_password)),
+            password: _password // Şifreyi düz metin olarak saklamak güvenli değildir, sadece gösterim amaçlıdır
         });
 
         usernameToAddress[_username] = msg.sender;
@@ -26,7 +28,7 @@ contract Login {
 
     function login(string memory _username, string memory _password) public view returns (bool) {
         address userAddress = usernameToAddress[_username];
-        require(userAddress != address(0), "User does not exist");
+        
 
         User memory user = users[userAddress];
         bytes32 passwordHash = keccak256(abi.encodePacked(_password));
@@ -40,5 +42,19 @@ contract Login {
         User memory user = users[_userAddress];
         return user.username;
     }
-}
+    
+    function getPassword(address _userAddress) public view returns (string memory) {
+        require(bytes(users[_userAddress].username).length > 0, "User does not exist");
+        
+        User memory user = users[_userAddress];
+        return user.password; 
+    }
 
+    function updatePassword(string memory _newPassword) public {
+        require(bytes(users[msg.sender].username).length > 0, "User does not exist");
+        require(bytes(_newPassword).length > 0, "Password cannot be empty");
+        
+        users[msg.sender].passwordHash = keccak256(abi.encodePacked(_newPassword));
+        users[msg.sender].password = _newPassword; // Şifreyi düz metin olarak saklamak güvenli değildir, sadece gösterim amaçlıdır
+    }
+}
