@@ -88,7 +88,7 @@ tx_receipt = w3.eth.wait_for_transaction_receipt(send_store_tx)
 
 
 
-print(simple_storage.functions.login("ahmettt","12345").call())
+print(simple_storage.functions.login("mehmet","12345").call())
 
 
 print(simple_storage.functions.getUser(my_Adress).call())
@@ -99,6 +99,24 @@ store_transaction = simple_storage.functions.updatePassword("mustafa").build_tra
     "chainId": chain_id,
     "from": my_Adress,
     "nonce": nonce + 2,
+    "gas": 2000000,  # You can adjust this as necessary
+    "gasPrice": w3.to_wei('20', 'gwei')  # Set a gas price
+})
+
+signed_store_txn = w3.eth.account.sign_transaction(store_transaction, private_key=private_key)
+
+send_store_tx = w3.eth.send_raw_transaction(signed_store_txn.rawTransaction)
+
+tx_receipt = w3.eth.wait_for_transaction_receipt(send_store_tx)
+
+print(simple_storage.functions.getUser(my_Adress).call())
+
+print(simple_storage.functions.getPassword(my_Adress).call())
+
+store_transaction = simple_storage.functions.updateUser("mahmut").build_transaction({
+    "chainId": chain_id,
+    "from": my_Adress,
+    "nonce": nonce + 3,
     "gas": 2000000,  # You can adjust this as necessary
     "gasPrice": w3.to_wei('20', 'gwei')  # Set a gas price
 })

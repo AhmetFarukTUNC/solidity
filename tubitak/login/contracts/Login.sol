@@ -57,4 +57,13 @@ contract Login {
         users[msg.sender].passwordHash = keccak256(abi.encodePacked(_newPassword));
         users[msg.sender].password = _newPassword; // Şifreyi düz metin olarak saklamak güvenli değildir, sadece gösterim amaçlıdır
     }
+
+    function updateUser(string memory _newUsername) public {
+        require(bytes(users[msg.sender].username).length > 0, "User does not exist");
+        
+        
+        
+        users[msg.sender].username = _newUsername; 
+    }
+
 }
