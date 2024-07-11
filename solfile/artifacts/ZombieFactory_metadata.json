@@ -159,16 +159,6 @@
 						"internalType": "uint256",
 						"name": "dna",
 						"type": "uint256"
-					},
-					{
-						"internalType": "uint32",
-						"name": "level",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "readyTime",
-						"type": "uint32"
 					}
 				],
 				"payable": false,
@@ -205,7 +195,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Desktop/solidity/solfile/struct.sol": "ZombieFactory"
+			"Desktop/solidity/solfile/zf.sol": "ZombieFactory"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -216,18 +206,18 @@
 		"remappings": []
 	},
 	"sources": {
-		"Desktop/solidity/solfile/ownable.sol": {
+		"Desktop/solidity/solfile/Ownable.sol": {
 			"keccak256": "0x9654bf2a12f238cde2cf1c540fe2964c90ec32f0e69b8d12bb195619521172d7",
 			"urls": [
 				"bzz-raw://a2c0469f8a865a52dd5f3d22e0a652af94fcdf14f8800558a06e3948f69bf3b5",
 				"dweb:/ipfs/QmYso2M2oKGPmVbRbDgD2JxN28pKJwYXwyKHZo5yP81yfG"
 			]
 		},
-		"Desktop/solidity/solfile/struct.sol": {
-			"keccak256": "0x883048db368460b1567e7cdc1f2042094986a1fc00961697700b437865bae02b",
+		"Desktop/solidity/solfile/zf.sol": {
+			"keccak256": "0x33f7770f33ecd2a2eeb3ca27b0d2891799e3cda9198149ccd5f2d9c0fa94b3b2",
 			"urls": [
-				"bzz-raw://bb82e348b0225726bd145d569ffab9668a9209b9c8b4948d455784256a816209",
-				"dweb:/ipfs/QmNvrzUH1iiuCrN3mUm1sSPqitVFkxQGjTYcNJs4bStUsg"
+				"bzz-raw://67475386e59876f20b53308452768dcebae056e395ffd5f327b2b910b0ee8e95",
+				"dweb:/ipfs/QmeLKFVFYrMD9sKi36fF7MXD7jBHeUBZTwRWmBoAM8XMNr"
 			]
 		}
 	},

@@ -53,6 +53,46 @@
 				"constant": false,
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_zombieId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newDna",
+						"type": "uint256"
+					}
+				],
+				"name": "changeDna",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_zombieId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_newName",
+						"type": "string"
+					}
+				],
+				"name": "changeName",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -82,6 +122,27 @@
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getZombiesByOwner",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -240,7 +301,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Desktop/solidity/solfile/zomfed.sol": "ZombieFeeding"
+			"Desktop/solidity/solfile/zm.sol": "ZombieHelper"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -263,6 +324,13 @@
 			"urls": [
 				"bzz-raw://82dbfec31b675dcfac23bb86b814813b6dfc16362ccfa5539607230d7864ef3c",
 				"dweb:/ipfs/QmQGG54xtvQsvi68BmWVp5NVueVWH5J5ejrkbTcut7WdmT"
+			]
+		},
+		"Desktop/solidity/solfile/zm.sol": {
+			"keccak256": "0xabe6dbea5ecc7f7a1f949ba3bd90fb43ae44c03423ada3b1829b666e6b9cd6a1",
+			"urls": [
+				"bzz-raw://c14c47747971edd2c15d5d85d3230e1ee19d83d283bef927566e546c5c0e359c",
+				"dweb:/ipfs/QmQy5oiMU4724Uv2S23erf2kxCqZC6nBxDJtmZv4qvA2PQ"
 			]
 		},
 		"Desktop/solidity/solfile/zomfed.sol": {

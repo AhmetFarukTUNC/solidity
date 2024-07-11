@@ -81,7 +81,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Desktop/solidity/solfile/modi1.sol": "KittyInterface"
+			"Desktop/solidity/solfile/zomfed.sol": "KittyInterface"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -92,25 +92,25 @@
 		"remappings": []
 	},
 	"sources": {
-		"Desktop/solidity/solfile/Ownable.sol": {
+		"Desktop/solidity/solfile/ownable.sol": {
 			"keccak256": "0x9654bf2a12f238cde2cf1c540fe2964c90ec32f0e69b8d12bb195619521172d7",
 			"urls": [
 				"bzz-raw://a2c0469f8a865a52dd5f3d22e0a652af94fcdf14f8800558a06e3948f69bf3b5",
 				"dweb:/ipfs/QmYso2M2oKGPmVbRbDgD2JxN28pKJwYXwyKHZo5yP81yfG"
 			]
 		},
-		"Desktop/solidity/solfile/modi1.sol": {
-			"keccak256": "0x8abfb963493e01af48bce138aaa10cc928f25799b581bcb8a95b166e7112a101",
+		"Desktop/solidity/solfile/tu.sol": {
+			"keccak256": "0xf08cd042b3c8ceff2507227a315dd6f5b3cf7b1c5ce7a1d385042acd85e12a6c",
 			"urls": [
-				"bzz-raw://cd6881846d14584dcfe08c59d0afbd9f9de52bdb801a60703a845c7f29d766a6",
-				"dweb:/ipfs/QmUuR2UpCF3RiPUZoq2BaF4fijoAPdMe1YgfsLikpauLZv"
+				"bzz-raw://82dbfec31b675dcfac23bb86b814813b6dfc16362ccfa5539607230d7864ef3c",
+				"dweb:/ipfs/QmQGG54xtvQsvi68BmWVp5NVueVWH5J5ejrkbTcut7WdmT"
 			]
 		},
-		"Desktop/solidity/solfile/zf.sol": {
-			"keccak256": "0x33f7770f33ecd2a2eeb3ca27b0d2891799e3cda9198149ccd5f2d9c0fa94b3b2",
+		"Desktop/solidity/solfile/zomfed.sol": {
+			"keccak256": "0xee229e026e4c1a445114ca19e76d5d0c3212d3718e9bc89eebdcf4b9ba5817d9",
 			"urls": [
-				"bzz-raw://67475386e59876f20b53308452768dcebae056e395ffd5f327b2b910b0ee8e95",
-				"dweb:/ipfs/QmeLKFVFYrMD9sKi36fF7MXD7jBHeUBZTwRWmBoAM8XMNr"
+				"bzz-raw://85f2236345a2e6022ac6c757a39bdcc9a820b3fa8a106cb5633e4dd5b01ab7e4",
+				"dweb:/ipfs/QmaSWPkaCxAaGuvJHhi6M83JuKZMaeQsi6oehR91itnJYR"
 			]
 		}
 	},
