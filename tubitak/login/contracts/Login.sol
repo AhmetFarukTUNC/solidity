@@ -15,7 +15,7 @@ contract Login {
         require(bytes(_username).length > 0, "Username cannot be empty");
         require(bytes(_password).length > 0, "Password cannot be empty");
         require(usernameToAddress[_username] == address(0), "Username already taken");
-        require(bytes(users[msg.sender].username).length == 0, "User already exists");
+        
 
         users[msg.sender] = User({
             username: _username,
@@ -44,7 +44,7 @@ contract Login {
     }
     
     function getPassword(address _userAddress) public view returns (string memory) {
-        require(bytes(users[_userAddress].username).length > 0, "User does not exist");
+        
         
         User memory user = users[_userAddress];
         return user.password; 

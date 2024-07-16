@@ -3,6 +3,8 @@ const {Web3} = require('web3');
 const fs = require('fs');
 const path = require('path');
 
+app = Flask(__name__)
+
 // MetaMask mnemonik cümleniz
 const mnemonic = 'hill sing city sweet comic history confirm decline risk capable oxygen unit';
 // Infura URL'nizi buraya ekleyin
